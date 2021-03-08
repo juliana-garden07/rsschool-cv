@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link href="./css/normalize.css" type="text/css" rel="stylesheet">
+        <link href="./css/style.css" type="text/css" rel="stylesheet">
+        <title>My resume</title>
+    </head>
+    <body>
+        <header>
+            
+            <div class="photo-wrapper">
+                <img src="./img/My photo.jpg" alt="My photo" id="photo"/>
+            </div>
+            <div id="name">
+                <h2>Sadovskaya Juliana</h2>
+            </div>
+            <div id="heading">
+                <h2>Junior Developer Resume</h2>
+            </div>
+            <div class="navigation-wrapper">
+                <nav>
+                    <ul class="navigation">
+                        <li><a HREF="#summary">Summary</a></li>
+                        <li><a HREF="#skills">Skills</a></li>
+                        <li><a HREF="#code">Code examples</a></li>
+                        <li><a HREF="#experience">Experiense</a></li>
+                        <li><a HREF="#education">Education</a></li>
+                        <li><a HREF="#languages">Foreign languages</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+        <div id="main">
+            <section id="summary">
+                <h3>Summary</h3>
+                <p class="MyInfo">Promising, quickly trained, active</p>
+            </section>
+
+            <section id="skills">
+                <h3>Skills</h3>
+                <p class="MyInfo">CSS, HTML, JavaScript</p>
+            </section>
+
+            <section id="code">
+                <h3>Code examples</h3>
+                <div >
+                    <div class="divNameKata">
+                        <h4>Kata:</h4>
+                        <p class="nameKata">    Count characters in your string</p>
+                    </div>  
+                    <h4>Solution:</h4>
+                    <code>
+                        <pre>
+                            function count (string) {  
+                                const arrSort = string.split('').sort();
+                                let result = {};
+                                let count = 1;
+                                if (string.length !== 0) {
+                                  for (let i = 1; i < string.length; i++){
+                                    if (arrSort[i] === arrSort[i - 1]){
+                                      count++;
+                                    } else {
+                                      result[arrSort[i-1]] = count;
+                                      count = 1;
+                                    }
+                                  }
+                                  result[arrSort[string.length-1]] = count;
+                                }
+                                 return result;
+                              }
+                        </pre>
+                    </code>
+                </div>
+                <div >
+                    <div class="divNameKata">
+                        <h4>Kata:</h4>
+                        <p class="nameKata">Is a number prime?</p>
+                    </div>
+                    <h4>Solution:</h4>
+                    <code>
+                        <pre>
+                            function isPrime(num) {
+                                let a = 0;
+                                if (num <= 1){
+                                  a = 0;
+                                } else if (num === 2 || num === 3){
+                                  a = 1;
+                                } 
+                                if(num > 2){
+                                  for (let i = 2; i <= Math.sqrt(num); i++){
+                                    if (num % i) {
+                                      a = 1;
+                                    } else {
+                                      a = 0;
+                                      break;
+                                    }
+                                  }
+                                } 
+                                return !!a;
+                              }
+                        </pre>
+                    </code>
+                </div>
+                <div>
+                    <div class="divNameKata">
+                        <h4>Kata:</h4>
+                        <p class="nameKata">Currying functions: multiply all elements in an array</p>
+                    </div>
+                    <h4>Solution:</h4>
+                    <code>
+                        <pre>
+                            function multiplyAll (arr) {
+                                return function(n) {
+                                  return arr.map((cur) => cur * n);
+                                }
+                              }
+                        </pre>
+                    </code>
+                </div>
+            </section>
+
+            <section id="experience">
+                <h3>Experience</h3>
+                <ol class="MyInfo">
+                    <li>
+                        <a HREF="https://www.codecademy.com/profiles/chip0410762451">Codecademy</a>
+                        <ul>
+                            <li>CSS</li>
+                            <li>HTML</li>
+                            <li>JavaScript</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a HREF="https://www.codewars.com/users/juliana-garden07">Codewars</a> (6 kyu)
+                    </li>
+                </ol>
+            </section>
+
+            <section id="education">
+                <h3>Education</h3>
+                <p class="MyInfo">BSU, Mechanic and Mathmatic faculty, specialist</p>
+            </section>
+
+            <section id="languages">
+                <h3>Foreign languages</h3>
+                <p class="MyInfo">English: A2</p>
+            </section>  
+
+        </div>
+
+        <footer>
+            <div id="footer-left">
+            Country: Belarus
+            City: Minsk
+            Index: 220073
+            Adress: ul. Skryganova, 4D, 314
+            </div>
+            <div id="footer-right">
+            +375(29)65-63-195
+            juliana.sad07@gmail.com
+            </div>
+        </footer>
+    </body>
+</html>
